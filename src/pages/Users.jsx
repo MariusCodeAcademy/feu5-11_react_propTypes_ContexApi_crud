@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import UsersList from '../components/userComps/UsersList';
+import Grid from '../components/ui/grid/Grid';
 
 function Users() {
   const [usersArr, setUsersArr] = useState([]);
@@ -21,7 +22,10 @@ function Users() {
     <div className="container">
       <h1>Users page</h1>
       <p>welcome to Users page</p>
-      <UsersList list={usersArr} />
+      <Grid cols={2}>
+        <UsersList list={usersArr} />
+        <aside>Users info</aside>
+      </Grid>
     </div>
   );
 }

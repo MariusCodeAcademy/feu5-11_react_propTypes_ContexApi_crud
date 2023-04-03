@@ -7,7 +7,7 @@ function UsersList({ list }) {
   console.log(JSON.stringify(list[0], null, 2));
   // UsersList perduoti kiekviena objekta is masyvo i SingleUser pavadinimu 'item'
   return (
-    <Grid listType="ul">
+    <Grid cols={2} listType="ul">
       {list.map((uObj) => (
         <SingleUser key={uObj.id} item={uObj} />
       ))}

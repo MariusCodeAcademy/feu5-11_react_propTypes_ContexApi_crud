@@ -19,6 +19,7 @@ function Header() {
           <NavLink className={css.navLink} to={'/contact'}>
             Contact
           </NavLink>
+          <h3 className={css.navLink}>User email</h3>
         </nav>
       </div>
     </header>

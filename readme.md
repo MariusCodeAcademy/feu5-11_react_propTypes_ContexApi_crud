@@ -18,3 +18,25 @@
 5. User page bus UsersList.jsx
 6. UsersList komponente turesim SingleUser.jsx komponentus
 7. UsersPage.jsx parisiusti ir state issaugoti useriu is https://dummyjson.com/docs/users
+
+## practice uzd
+
+1. UsersPage susikurti state 'loggedInUser' pradine reiksme {}
+2. UsersPage susikurti funckija handleSelectedUser(id)
+3. <Button>Login user</Button> - turi nustatyti UsersPage viduje state 'loggedInUser'
+
+## Aside
+
+1. Pasidarom Aside i komponenta UsersAside.jsx
+2. Avaizduojam logged in user varda, emaila, amziu
+3. UsersAside gaus props validuoti visus props
+4. Sukuriam UsersInfo.jsx, patalpinam ji i UsersAside.jsx ir jame atvaizduojam:
+   1. kiek yra users
+   2. visu users amziu vidurki
+   3. atvaizduojam viename paragrafe, kableliais atskirtas userio akiu spalvas.
+
+## SingleUser
+
+1. Prisideti Delete mygtuka
+2. Jo paspaudimu istrinsim Vartotoja
+3. Isitikinti kad UsersInfo atvaizduoja pasikeitusius duomenis

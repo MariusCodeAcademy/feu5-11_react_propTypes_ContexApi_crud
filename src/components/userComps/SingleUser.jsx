@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './../ui/card/Card';
+import Button from '../ui/button/Button';
 
 function SingleUser({ item }) {
   // priimti ir validuoti props.item
@@ -13,6 +14,7 @@ function SingleUser({ item }) {
         <h2>{item.firstName}</h2>
         <p>{item.email}</p>
         <p>{item.age}</p>
+        <Button>Login user</Button>
       </Card>
     </li>
   );
