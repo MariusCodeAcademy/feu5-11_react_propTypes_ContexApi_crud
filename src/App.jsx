@@ -11,7 +11,9 @@ function App() {
   return (
     <div className="container">
       <h1>Users</h1>
-      <Button className="mb20">Click me</Button>
+      <Button onClick={testBtn} className="mb20">
+        Click me
+      </Button>
     </div>
   );
 }
