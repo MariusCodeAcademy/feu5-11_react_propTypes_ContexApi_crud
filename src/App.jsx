@@ -1,19 +1,19 @@
 import './styles/reset.css';
 import './styles/App.css';
-import Button from './components/ui/button/Button';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Contacts from './pages/Contact';
+import Users from './pages/Users';
 
 function App() {
-  //
-  function testBtn() {
-    console.count('paspaudei mygtuka');
-  }
-
   return (
     <div className="container">
-      <h1>Users</h1>
-      <Button onClick={testBtn} className="mb20">
-        Click me
-      </Button>
+      <header>header</header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contacts />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
     </div>
   );
 }
