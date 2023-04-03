@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from './../ui/card/Card';
 import Button from '../ui/button/Button';
 
-function SingleUser({ item }) {
+function SingleUser({ item, onLogin }) {
   // priimti ir validuoti props.item
   // validuoti ji su shape isitikinti kad jis turi
   // id, email, firstName, gender, height, eyeColor, age
@@ -14,7 +14,7 @@ function SingleUser({ item }) {
         <h2>{item.firstName}</h2>
         <p>{item.email}</p>
         <p>{item.age}</p>
-        <Button>Login user</Button>
+        <Button onClick={() => onLogin(item.id)}>Login user</Button>
         <Button danger>Delete</Button>
       </Card>
     </li>
@@ -31,6 +31,7 @@ SingleUser.propTypes = {
     age: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
   }),
+  onLogin: PropTypes.func,
 };
 
 export default SingleUser;

@@ -18,12 +18,16 @@ function Users() {
     getUsers();
   }, []);
 
+  function loginUserHandler(idLogin) {
+    console.log('loginUserHandler', idLogin);
+  }
+
   return (
     <div className="container">
       <h1>Users page</h1>
       <p>welcome to Users page</p>
       <Grid cols={2}>
-        <UsersList list={usersArr} />
+        <UsersList list={usersArr} onLogin={loginUserHandler} />
         <aside>Users info</aside>
       </Grid>
     </div>
