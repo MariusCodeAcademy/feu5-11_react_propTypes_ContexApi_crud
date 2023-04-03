@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-import './card.css';
+import css from './Card.module.css';
 
 function Card({ children, className }) {
-  return <div className={`card ${className}`}>{children}</div>;
+  return <div className={`${css.card} ${className}`}>{children}</div>;
 }
 Card.propTypes = {
   className: PropTypes.string,
