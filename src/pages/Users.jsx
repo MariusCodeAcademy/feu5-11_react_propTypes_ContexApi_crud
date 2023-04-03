@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import UsersList from '../components/userComps/UsersList';
 import Grid from '../components/ui/grid/Grid';
+import { any } from 'prop-types';
 
 function Users() {
   const [usersArr, setUsersArr] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState({});
 
   useEffect(() => {
     function getUsers() {
@@ -20,12 +22,18 @@ function Users() {
 
   function loginUserHandler(idLogin) {
     console.log('loginUserHandler', idLogin);
+    const foundUser = usersArr.find((uObj) => uObj.id === idLogin);
+    if (!foundUser) {
+      throw new Error('nerastas login useris');
+    }
+    setLoggedInUser(foundUser);
   }
 
   return (
     <div className="container">
       <h1>Users page</h1>
       <p>welcome to Users page</p>
+      <h2>logged in: {loggedInUser.firstName}</h2>
       <Grid cols={2}>
         <UsersList list={usersArr} onLogin={loginUserHandler} />
         <aside>Users info</aside>
