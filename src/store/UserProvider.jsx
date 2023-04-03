@@ -1,15 +1,18 @@
+import { useState } from 'react';
 import { UserContext } from './UserContext';
 import PropTypes from 'prop-types';
 
 function UserProvider({ children }) {
+  const [email, setEmail] = useState('');
   //
   const userCtx = {
-    email: '',
+    email: email,
     userCount: 0,
+    setEmailinContex: setEmail,
   };
 
   return (
-    <UserContext.Provider value={'buble gum'}>{children}</UserContext.Provider>
+    <UserContext.Provider value={userCtx}>{children}</UserContext.Provider>
   );
 }
 

@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UsersList from '../components/userComps/UsersList';
 import Grid from '../components/ui/grid/Grid';
 import UserAside from '../components/userComps/UserAside';
+import { UserContext } from '../store/UserContext';
 
 function Users() {
   const [usersArr, setUsersArr] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState({});
+
+  const userCtx = useContext(UserContext);
 
   useEffect(() => {
     function getUsers() {
@@ -14,6 +17,7 @@ function Users() {
         .then((dataInJs) => {
           console.log('dataInJs ===', dataInJs);
           setUsersArr(dataInJs.users.slice(0, 6));
+          // set user count in context
         })
         .catch((err) => console.warn(err));
     }
@@ -27,6 +31,7 @@ function Users() {
       throw new Error('nerastas login useris');
     }
     setLoggedInUser(foundUser);
+    userCtx.setEmailinContex(foundUser.email);
   }
 
   const userCount = usersArr.length;
