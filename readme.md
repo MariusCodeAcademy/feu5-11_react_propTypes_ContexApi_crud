@@ -17,4 +17,4 @@
    - /users => Users Page
 5. User page bus UsersList.jsx
 6. UsersList komponente turesim SingleUser.jsx komponentus
-7. UsersList.jsx parisiusti ir state issaugoti useriu is https://dummyjson.com/docs/users
+7. UsersPage.jsx parisiusti ir state issaugoti useriu is https://dummyjson.com/docs/users
