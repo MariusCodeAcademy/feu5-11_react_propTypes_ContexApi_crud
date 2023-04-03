@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function UsersInfo({ userCount }) {
+  // gauti userCount is context
+  // useContext
   return (
     <div>
       <h3>UsersInfo</h3>

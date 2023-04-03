@@ -41,3 +41,13 @@
 2. <Button danger>Delete</Button> - turetu gauti skirtinga stiliu jei gauna propsa 'danger'. Props validuojam.
 3. Jo paspaudimu istrinsim Vartotoja
 4. Isitikinti kad UsersInfo atvaizduoja pasikeitusius duomenis
+
+## Context
+
+1. sukurti setUserCount state contexte
+2. perduoti setUserCount i context value
+3. Users.jsx bet kada pasikeitus usersArr ilgiui atnaujinti ji contexte
+4. paduoti userCount reiksme i kontexta
+5. UsersInfo.jsx
+   1. gauti userCount is context (useContext)
+   2. panaudoti skaiciau atvaizdavimui
