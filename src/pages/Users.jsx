@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import UsersList from '../components/userComps/UsersList';
 import Grid from '../components/ui/grid/Grid';
-import { any } from 'prop-types';
+import UserAside from '../components/userComps/UserAside';
 
 function Users() {
   const [usersArr, setUsersArr] = useState([]);
@@ -36,7 +36,7 @@ function Users() {
       <h2>logged in: {loggedInUser.firstName}</h2>
       <Grid cols={2}>
         <UsersList list={usersArr} onLogin={loginUserHandler} />
-        <aside>Users info</aside>
+        <UserAside email={loggedInUser.email} />
       </Grid>
     </div>
   );
