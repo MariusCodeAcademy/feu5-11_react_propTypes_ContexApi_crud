@@ -15,6 +15,7 @@ function SingleUser({ item }) {
         <p>{item.email}</p>
         <p>{item.age}</p>
         <Button>Login user</Button>
+        <Button danger>Delete</Button>
       </Card>
     </li>
   );

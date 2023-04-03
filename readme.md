@@ -38,5 +38,6 @@
 ## SingleUser
 
 1. Prisideti Delete mygtuka
-2. Jo paspaudimu istrinsim Vartotoja
-3. Isitikinti kad UsersInfo atvaizduoja pasikeitusius duomenis
+2. <Button danger>Delete</Button> - turetu gauti skirtinga stiliu jei gauna propsa 'danger'. Props validuojam.
+3. Jo paspaudimu istrinsim Vartotoja
+4. Isitikinti kad UsersInfo atvaizduoja pasikeitusius duomenis
