@@ -29,6 +29,8 @@ function Users() {
     setLoggedInUser(foundUser);
   }
 
+  const userCount = usersArr.length;
+
   return (
     <div className="container">
       <h1>Users page</h1>
@@ -36,7 +38,7 @@ function Users() {
       <h2>logged in: {loggedInUser.firstName}</h2>
       <Grid cols={2}>
         <UsersList list={usersArr} onLogin={loginUserHandler} />
-        <UserAside email={loggedInUser.email} />
+        <UserAside email={loggedInUser.email} userCount={userCount} />
       </Grid>
     </div>
   );
