@@ -15,7 +15,7 @@ function Grid(props) {
 
 Grid.propTypes = {
   cols: PropTypes.number,
-  children: PropTypes.element,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 export default Grid;
