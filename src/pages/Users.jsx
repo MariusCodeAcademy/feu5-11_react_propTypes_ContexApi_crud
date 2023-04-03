@@ -10,7 +10,7 @@ function Users() {
         .then((resp) => resp.json())
         .then((dataInJs) => {
           console.log('dataInJs ===', dataInJs);
-          setUsersArr(dataInJs.users);
+          setUsersArr(dataInJs.users.slice(0, 6));
         })
         .catch((err) => console.warn(err));
     }

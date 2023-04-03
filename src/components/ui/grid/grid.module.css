@@ -11,3 +11,8 @@
 .cols1 {
   grid-template-columns: repeat(1, 1fr);
 }
+
+.unlisted {
+  list-style: none;
+  padding-left: 0;
+}
