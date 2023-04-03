@@ -4,11 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Contacts from './pages/Contact';
 import Users from './pages/Users';
+import Header from './components/layout/header/Header';
 
 function App() {
   return (
-    <div className="container">
-      <header>header</header>
+    <div className="">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contacts />} />

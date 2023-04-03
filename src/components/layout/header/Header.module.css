@@ -1,0 +1,17 @@
+.header {
+  background-color: #333;
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLink {
+  padding: 0.8em 1.6em;
+}
+.navLink:hover {
+  background-color: rgba(114, 114, 114, 0.702);
+}
