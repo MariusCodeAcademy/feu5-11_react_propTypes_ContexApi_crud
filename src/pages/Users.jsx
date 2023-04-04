@@ -3,6 +3,7 @@ import UsersList from '../components/userComps/UsersList';
 import Grid from '../components/ui/grid/Grid';
 import UserAside from '../components/userComps/UserAside';
 import { UserContext } from '../store/UserContext';
+import axios from 'axios';
 
 function Users() {
   const [usersArr, setUsersArr] = useState([]);
@@ -16,7 +17,7 @@ function Users() {
         .then((resp) => resp.json())
         .then((dataInJs) => {
           console.log('dataInJs ===', dataInJs);
-          setUsersArr(dataInJs.users.slice(0, 6));
+          // setUsersArr(dataInJs.users.slice(0, 6));
           // set user count in context
           // userCtx.setUserCount(usersArr);
           // console.log('usersArr ===', usersArr);
@@ -24,6 +25,16 @@ function Users() {
         })
         .catch((err) => console.warn(err));
     }
+    function getUserAxios() {
+      axios
+        .get('https://dummyjson.com/users')
+        .then((resp) => {
+          console.log('resp ===', resp.data);
+          setUsersArr(resp.data.users.slice(0, 9));
+        })
+        .catch((err) => console.warn(err));
+    }
+    getUserAxios();
     getUsers();
   }, []);
 
