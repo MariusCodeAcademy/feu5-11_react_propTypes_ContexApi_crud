@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 
 function UserProvider({ children }) {
   const [email, setEmail] = useState('');
+  const [userCount, setUserCount] = useState(0);
   // userCount state
   //
   const userCtx = {
     email: email,
-    userCount: 0,
+    userCount: userCount,
     setEmailinContex: setEmail,
+    setUserCount,
   };
 
   return (

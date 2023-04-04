@@ -18,6 +18,9 @@ function Users() {
           console.log('dataInJs ===', dataInJs);
           setUsersArr(dataInJs.users.slice(0, 6));
           // set user count in context
+          userCtx.setUserCount(usersArr);
+          console.log('usersArr ===', usersArr);
+          // userCtx.setUserCount(dataInJs.users.slice(0, 6).length);
         })
         .catch((err) => console.warn(err));
     }
