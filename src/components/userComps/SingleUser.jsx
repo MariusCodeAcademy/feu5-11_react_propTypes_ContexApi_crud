@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from './../ui/card/Card';
 import Button from '../ui/button/Button';
 
-function SingleUser({ item, onLogin }) {
+function SingleUser({ item, onLogin, onDelete }) {
   // priimti ir validuoti props.item
   // validuoti ji su shape isitikinti kad jis turi
   // id, email, firstName, gender, height, eyeColor, age
@@ -15,7 +15,9 @@ function SingleUser({ item, onLogin }) {
         <p>{item.email}</p>
         <p>{item.age}</p>
         <Button onClick={() => onLogin(item.id)}>Login user</Button>
-        <Button danger>Delete</Button>
+        <Button onClick={() => onDelete(item.id)} danger>
+          Delete
+        </Button>
       </Card>
     </li>
   );

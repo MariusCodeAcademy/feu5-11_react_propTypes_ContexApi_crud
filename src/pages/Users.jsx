@@ -19,13 +19,13 @@ function Users() {
           setUsersArr(dataInJs.users.slice(0, 6));
           // set user count in context
           userCtx.setUserCount(usersArr);
-          console.log('usersArr ===', usersArr);
-          // userCtx.setUserCount(dataInJs.users.slice(0, 6).length);
+          // console.log('usersArr ===', usersArr);
+          userCtx.setUserCount(dataInJs.users.slice(0, 6).length);
         })
         .catch((err) => console.warn(err));
     }
     getUsers();
-  }, []);
+  }, [userCtx.setUserCount]);
 
   function loginUserHandler(idLogin) {
     console.log('loginUserHandler', idLogin);
@@ -37,6 +37,12 @@ function Users() {
     userCtx.setEmailinContex(foundUser.email);
   }
 
+  function handleDeleteUser(idToDelete) {
+    setUsersArr((prevUserArr) =>
+      prevUserArr.filter(({ id }) => id !== idToDelete),
+    );
+  }
+
   const userCount = usersArr.length;
 
   return (
@@ -45,7 +51,11 @@ function Users() {
       <p>welcome to Users page</p>
       <h2>logged in: {loggedInUser.firstName}</h2>
       <Grid cols={2}>
-        <UsersList list={usersArr} onLogin={loginUserHandler} />
+        <UsersList
+          list={usersArr}
+          onLogin={loginUserHandler}
+          onDelete={handleDeleteUser}
+        />
         <UserAside email={loggedInUser.email} userCount={userCount} />
       </Grid>
     </div>
