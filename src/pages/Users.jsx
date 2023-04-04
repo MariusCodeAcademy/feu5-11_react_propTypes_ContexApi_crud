@@ -18,14 +18,21 @@ function Users() {
           console.log('dataInJs ===', dataInJs);
           setUsersArr(dataInJs.users.slice(0, 6));
           // set user count in context
-          userCtx.setUserCount(usersArr);
+          // userCtx.setUserCount(usersArr);
           // console.log('usersArr ===', usersArr);
-          userCtx.setUserCount(dataInJs.users.slice(0, 6).length);
+          // userCtx.setUserCount(dataInJs.users.slice(0, 6).length);
         })
         .catch((err) => console.warn(err));
     }
     getUsers();
-  }, [userCtx.setUserCount]);
+  }, []);
+
+  const userCountSetter = userCtx.setUserCount;
+  // sukuriam efekta, kuri ivyks kai tik pasikeis usersArr ilgis
+  useEffect(() => {
+    console.log('pasikeite ilgis', usersArr.length);
+    userCountSetter(usersArr.length);
+  }, [usersArr.length, userCountSetter]);
 
   function loginUserHandler(idLogin) {
     console.log('loginUserHandler', idLogin);
